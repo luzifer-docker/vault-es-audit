@@ -19,6 +19,7 @@ output.elasticsearch:
   index: "vault-audit-%{+yyyy.MM.dd}"
 
 path.home: /opt/filebeat
+path.data: /var/log/vault/es-audit
 
 setup.template.enabled: true
 setup.template.name: "vault-audit"
