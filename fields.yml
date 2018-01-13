@@ -1,0 +1,71 @@
+---
+
+- key: vault-audit
+  title: "vault-audit"
+  fields:
+    - name: "@timestamp"
+      type: date
+    - name: auth
+      type: group
+      fields:
+        - name: accessor
+          type: keyword
+        - name: client_token
+          type: keyword
+        - name: display_name
+          type: keyword
+        - name: entity_id
+          type: keyword
+        - name: metadata
+          type: object
+        - name: policies
+          type: keyword
+    - name: beat
+      type: group
+      fields:
+        - name: hostname
+          type: keyword
+        - name: name
+          type: keyword
+        - name: version
+          type: keyword
+    - name: error
+      type: text
+    - name: offset
+      type: long
+    - name: request
+      type: group
+      fields:
+        - name: client_token
+          type: keyword
+        - name: client_token_accessor
+          type: keyword
+        - name: data
+          type: object
+        - name: headers
+          type: object
+        - name: id
+          type: keyword
+        - name: operation
+          type: keyword
+        - name: path
+          type: keyword
+        - name: policy_override
+          type: boolean
+        - name: remote_address
+          type: keyword
+        - name: wrap_ttl
+          type: long
+    - name: response
+      type: group
+      fields:
+        - name: auth
+          type: object
+        - name: data
+          type: object
+        - name: secret
+          type: object
+    - name: time
+      type: date
+
+...
